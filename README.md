@@ -1,5 +1,5 @@
 # The Component Pattern
-I will eventually be collecting all my notes & experiments with the component pattern here.
+Where I will be collecting all my notes & experiments with the component pattern.
 
 For now here is somthing to look at.
 
