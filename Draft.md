@@ -6,7 +6,7 @@
 
 The component pattern is a pattern for creating well structured software. The pattern asserts that an ideal system is composed as one hierarchy of components, starting with the application component. It is intentionally abstract and doesn't require a library or a framework.
 
-![](../resources/images/ComponentPattern.jpg)
+![][image-1]
 
  Components define the structure of software and are are composed together as shown in the diagram above. Arrows pointing in represent input. Arrows pointing out represent output. Outer components are parent components of inner components. This keeps dependencies pointing inward and output outward.  No inner component is dependent on an outer component until it is in the context of it's parent. Because the dependencies flow in the direction of composition of the system , the dependencies are inherent in the system itself.
  
@@ -16,37 +16,37 @@ The component pattern is a pattern for creating well structured software. The pa
 3. Parent components are inherently interested in the facts provided by the output of it's child components.
 4. In the component pattern everything is a component. It is not specific to UI. For example the application is a component.
 
- ![](../resources/images/Composition2.png)
+ ![][image-2]
  
 ## Composition
 Components are composed of sub-components as shown above. The Y axis represents composition. A component receives input, some process happens, and it produces output at some point in time. This is represented by the X axis. Each child components input is a mapping of it's parent's input. Each child components output is reduced into the parents process and may produce output. 
  
-  -  Input  = ParentInput -> ChildInput
- 
-  -  Output = ParentInput, ChildOutput -> ParentOutput? 
+  -  Input  = ParentInput -\> ChildInput
+	 
+  -  Output = ParentInput, ChildOutput -\> ParentOutput?
 
 ### State
 
 Keep in mind, when we talk about state in components we are interested in the transient state. Whether or not a component has internal stored state does not matter.
 
-An entire application is a component that takes it's initial state as input, and produces new state at some point in time. If we reason about this further, we can determine that any sub-component of the application is inherently dependent on the application state or the component wouldn't be necessary! In theory, all components in an application are a function of the same total state. AppState -> AppState.
+An entire application is a component that takes it's initial state as input, and produces new state at some point in time. If we reason about this further, we can determine that any sub-component of the application is inherently dependent on the application state or the component wouldn't be necessary! In theory, all components in an application are a function of the same total state. AppState -\> AppState.
 
 It would not make sense to write every component specific to an application. Components do something specific and we want to re-use them. Therefore, we make components work with  specific state. But how do we bridge from the parent component's state to it's subcomponents specific state? This is what is most important about this pattern. Where truth comes from, and where resulting updates flow.
 
-In theory every subcomponent's input is a mapping of it's parent's state. And every subcomponent's output causes an update to it's parent. In the diagram above this is shown in the yellow as Map, and Reduce. All child input is a mapping of parent input. Even if the component takes no input, in theory it is a map of ParentState -> (). All child output is a reduce or fold into it's parent's process and may cause the parent to output. So parent output is a function of (PreviousParentState, ChildOutput) -> NewParentState
+In theory every subcomponent's input is a mapping of it's parent's state. And every subcomponent's output causes an update to it's parent. In the diagram above this is shown in the yellow as Map, and Reduce. All child input is a mapping of parent input. Even if the component takes no input, in theory it is a map of ParentState -\> (). All child output is a reduce or fold into it's parent's process and may cause the parent to output. So parent output is a function of (PreviousParentState, ChildOutput) -\> NewParentState
 
 Not all components require input or have output. But it's always in the context of it's parent  that makes their use interesting to the application. Maintaining these relationships are the constraints of this pattern.
 
 Keep in mind, this is theory. How it is expressed and implemented is flexible.
 
-###Messaging and The Significance of an "Output"
+### Messaging and The Significance of an "Output"
 
 #### Why components have outputs, not public methods and properties. AKA, why return values are harmful to software structure.
 
 When asked about the meaning of Object Oriented Programming Alan Kay once said: 
 
->> *"OOP to me means only messaging, local retention and protection and
- hiding of state-process, and extreme late-binding of all things"*
+> > \*"OOP to me means only messaging, local retention and protection and
+ hiding of state-process, and extreme late-binding of all things"\*
  
 What is wrong with messaging in common OOP is that objects communicate across their boundaries and only at the request of the receiver. 
 
@@ -68,7 +68,7 @@ Public methods and properties do not provide these, and is why components have o
 ### May 29, 2016
 This is a learning project for me.  These ideas were developed in my own work.  I then discovered others seemingly working on these ideas as well.  I have not seen this pattern spelled out, so I decided to take notes and share the ideas I have. Whether or not it is correct or perfect, I don't know. I iterate ideas by trying to prove them wrong. So far this has proven to be a useful pattern in my work, but it's still evolving.
 
-[Elm](http://elm-lang.org) is a very close implementation of this pattern. [Cycle.js](http://cycle.js.org) is another. [React/Redux](https://facebook.github.io/react/index.html) is also. However in my implementation of this pattern components are not just UI specific. Recently React added higher order components too. Another interesting similar implementation of this pattern is [Flutter](https://flutter.io). 
+[Elm][1] is a very close implementation of this pattern. [Cycle.js][2] is another. [React/Redux][3] is also. However in my implementation of this pattern components are not just UI specific. Recently React added higher order components too. Another interesting similar implementation of this pattern is [Flutter][4]. 
 
 
 ## A thought experiment for fun.
@@ -114,3 +114,11 @@ If a component needs to do asynchronous processing on another thread. The result
 
 1. Input comes in to request data.
 2. The asynchronous process occurs in the Z axis, which is an output in that axis. ( a child component). Result or failure occurs in the Z axis. Result is output in the X axis.
+
+[1]:	http://elm-lang.org
+[2]:	http://cycle.js.org
+[3]:	https://facebook.github.io/react/index.html
+[4]:	https://flutter.io
+
+[image-1]:	./img/ComponentPattern.jpg
+[image-2]:	../resources/images/Composition2.png

@@ -22,7 +22,7 @@ The component pattern is a pattern for creating well structured software. The pa
 Components are composed of sub-components as shown above. The Y axis represents composition. A component receives input, some process happens, and it produces output at some point in time. This is represented by the X axis. Each child components input is a mapping of it's parent's input. Each child components output is reduced into the parents process and may produce output. 
  
   -  Input  = ParentInput -\> ChildInput
-	 
+	  
   -  Output = ParentInput, ChildOutput -\> ParentOutput?
 
 ### State
@@ -120,5 +120,5 @@ If a component needs to do asynchronous processing on another thread. The result
 [3]:	https://facebook.github.io/react/index.html
 [4]:	https://flutter.io
 
-[image-1]:	images/ComponentPattern.jpg
+[image-1]:	./img/ComponentPattern.jpg
 [image-2]:	images/Composition2.png
