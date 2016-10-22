@@ -1,5 +1,4 @@
 # The Component Pattern
-Where I will be collecting all my notes & experiments with the component pattern.
 
 ## A Component
 
@@ -8,6 +7,8 @@ Where I will be collecting all my notes & experiments with the component pattern
 ## Components working together.
 ![Composition](img/Component2.png)
 # Operators
+Operators are single step automoton combinators. Operators take one single input value in, and produce output, or, nothing at all.
+
 ```swift
 //===----------------------------------------------------------------------===//
 //// MARK: - Operator
@@ -30,8 +31,6 @@ public protocol Operator  {
 }
 ```
 
-Operators are single step automoton combinators. Operators take one single input value in, and produce output, or, nothing at all.
-
 **The idea behind operators are simple:**
 - what you do with input from a source should be decoupled from the mechanism in which it gets there.
 - a useful abstraction is "as much process" with as little predifined content.
@@ -47,7 +46,8 @@ myOperator.next(myStruct)
 
 ```
 
-## Sample Operators see (`operator.swift` for more.)
+## Sample Operators 
+(see `operator.swift` for more)
 
 | `Operator`         | Description                                                                            |
 |--------------------|----------------------------------------------------------------------------------------|
