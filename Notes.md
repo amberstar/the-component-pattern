@@ -1,2 +1,0 @@
-## Background:
-This is a learning project for me.  These ideas were developed in my own work.  I then discovered others seemingly working on these ideas as well.  I have not seen this pattern spelled out, so I decided to take notes and share the ideas I have. Whether or not it is correct or perfect, I don't know. I iterate ideas by trying to prove them wrong. So far this has proven to be a useful pattern in my work, but it's still evolving.
