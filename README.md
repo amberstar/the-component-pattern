@@ -1,9 +1,5 @@
 # The Component Pattern
 
-## A Component
-
-![The Component Pattern](img/ComponentPattern.png)
-
 ## Components working together.
 ![Composition](img/Component2.png)
 # Operators
