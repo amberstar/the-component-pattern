@@ -36,7 +36,7 @@ extension OperatorProtocol {
     }
 }
 
-/// An operator type that uses a function to process input and generate output.
+/// An operator type that uses a process function to generate output.
 ///
 /// This is distinct from Map in that it uses it's
 /// generator function to determine if it should produce
