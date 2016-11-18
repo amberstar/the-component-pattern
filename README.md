@@ -1,19 +1,16 @@
 # The Component Pattern
 
 ## What is the component pattern?
-The component pattern is a simple experiment to reason about structure of software. It can be tried in varying degrees mostly by convention with exsiting types. The ideas here are not unique, in fact you will recognize the ideas and see them everywhere, and as far back Unix, Lisp, and probably before that.
+The component pattern is a simple experiment to reason about the structure of software. It can be tried in varying degrees mostly by convention with exsiting types you already know. The ideas here are not unique, in fact you will recognize the ideas and see them everywhere, and as far back as the Unix OS, and the Lisp  programming language, and probably before way before that.
 
-The question is, is this a foundational concept that everyone should know?
-
-Everything you need to know about the pattern is in the image below:
-
+The question is, is this a foundational concept that should be a pattern?
 
 ![Composition](img/Component2.png)
 
 ## What is a component?
 A component is any composable type that has input, a process, and output. Another way to think about a component is as a pure function with multiple inputs and outputs. In the component pattern a pure function is considered a component. Functions are just one type of component.
 
-
+![Component](img/Component1.png)
 
 # Operators
 Operators are simple components that compose together to make new ones, just like any component composition. They take a single input value in,and may produce output, or, not. The not part is signifigant. It's not that operations do or don't output, it's that it may or it may not, depending on it's context and purpouse. For example a filter operator.
