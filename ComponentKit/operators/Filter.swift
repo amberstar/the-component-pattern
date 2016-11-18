@@ -4,7 +4,7 @@
 // Copyright © 2016 SIMPLETOUCH LLC. All rights reserved.
 //
 
-/// An operator that filters input and produces output that satifies a predicate.
+/// An operator that filters input and produces output that satisfies a predicate.
 public struct Filter<Element> : OperatorProtocol {
     var predicate : (Element) -> Bool
     
