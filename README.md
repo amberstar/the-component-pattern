@@ -1,14 +1,27 @@
 # The Component Pattern
 
-## Components working together.
+## What is the component pattern?
+The component pattern is a simple experiment to reason about structure of software. It can be tried in varying degrees mostly by convention with exsiting types. The ideas here are not unique, in fact you will recognize the ideas and see them everywhere, and as far back Unix, Lisp, and probably before that.
+
+The question is, is this a foundational concept that everyone should know?
+
+Everything you need to know about the pattern is in the image below:
+
+
 ![Composition](img/Component2.png)
+
+## What is a component?
+A component is any composable type that has input, a process, and output. Another way to think about a component is as a pure function with multiple inputs and outputs. In the component pattern a pure function is considered a component. Functions are just one type of component.
+
+
+
 # Operators
-Operators are single step automoton combinators. Operators take one single input value in, and produce output, or, nothing at all.
+Operators are simple components that compose together to make new ones, just like any component composition. They take a single input value in,and may produce output, or, not. The not part is signifigant. It's not that operations do or don't output, it's that it may or it may not, depending on it's context and purpouse. For example a filter operator.
+
+**The idea behind operators are simple:**
+- a useful abstraction is "as much process with as little content as possible". 
 
 ```swift
-//===----------------------------------------------------------------------===//
-//// MARK: - Operator
-//===----------------------------------------------------------------------===//
 
 /// A type that operates on values possibly producing a different type,
 /// or no value at all.
@@ -27,9 +40,6 @@ public protocol Operator  {
 }
 ```
 
-**The idea behind operators are simple:**
-- what you do with input from a source should be decoupled from the mechanism in which it gets there.
-- a useful abstraction is "as much process" with as little predifined content.
 
 ```swift
 var myOperator = Take<MyStruct>().map{ format($0.myProperty) }.action { label.text = $0 }
