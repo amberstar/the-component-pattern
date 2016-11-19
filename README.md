@@ -8,7 +8,7 @@ The purpose is to raise the question, is this a logical truth, and if so why not
 ![Composition](img/Component2.png)
 
 ## What is a component?
-A component is any composable type that has input, a process, and output. Another way to think about a component is a set of functions because they can have multiple inputs and outputs. In the component pattern a pure function is considered a component.
+A component is any composable type that has input, a process, and output. A better way to think about a component is as a set of functions because a component can have a set of intpus and a set of output, but we can think of those sets as a single truth.. In the component pattern a pure function is a component as well, because it meets those requirements. I explain what I mean in the next section about operators.
 
 ![Component](img/Component1.png)
 
