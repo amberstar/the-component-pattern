@@ -1,7 +1,7 @@
 # The Component Pattern
 
-The component pattern is an experiment and set of ideas to identify a recurring pattern found in well structured software.
-The pattern is generally a pattern of understanding. It can be implemented in varying degrees mostly by convention with existing types you already know. The ideas here are not unique, in-fact you will recognize the pattern as far back as the Unix OS, Lisp, and many other places.
+The project is a collection of ideas around structuring software.
+The component pattern is generally a pattern of understanding. It can be implemented or reasoned about in varying degrees mostly by convention using existing types you already know. The ideas here are not unique, in-fact you will recognize them as far back as the Unix OS, Lisp, and many other places.
  
  - [ ] TODO: compile a list of implementations.
 
