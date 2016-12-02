@@ -54,7 +54,7 @@ Operators are simple components that compose together to make new ones. They tak
 
 **The idea behind operators are simple:**
 
-- a useful abstraction are "as much process with as little content as possible".
+- a useful abstraction is "as much process with as little content as possible".
 - processing a value should not be coupled to it's delivery method. (such as observable operators)
 
 ```swift
@@ -75,7 +75,7 @@ public protocol OperatorProtocol {
 ```swift
 var myOperator = Take<MyStruct>().map{ format($0.myProperty) }.action { label.text = $0 }
 ```
-We start with `Take` to declare we want to input `MyStruct`, we then perform a `map` and an `action`.  This defines a new `operator`. Now we a distinct operation, a small component we can input values into and produce a result. 
+We start with `Take` to declare we want to input values of type`MyStruct`, we then perform a `map` and an `action`.  This defines `myOperator`, a new `operator`. Now we have a distinct purposeful operation component we can input values into and produce a result.
 
 ```swift
 
