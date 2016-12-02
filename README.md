@@ -9,7 +9,7 @@ The pattern is generally a pattern of understanding. It can be implemented in va
 
 What is a component?
 --------------------
-Components are based on the idea that software has three axis, **structure**, **behavior**, and **state**. A component provides the structure, and is any composable type that has input, a process(behavior), and output. Another way to think about a component is as a pure function with as set of possible inputs and a set of possible outputs.
+Components are based on the idea that software has three axis, **structure**, **behavior**, and **state** and each are interdependent to make a coherent well organized system. A component provides the structure, and is any composable type that has input, a process(behavior), and output. Another way to think about a component is as a pure function with as set of possible inputs and a set of possible outputs.
 
 ![Component](img/Component1.png)
 
@@ -28,15 +28,7 @@ When asked about the meaning of Object Oriented Programming Alan Kay once said:
 >> *"OOP to me means only messaging, local retention and protection and
  hiding of state-process, and extreme late-binding of all things"*
 
-What is wrong with messaging in common OOP is that objects communicate across their boundaries and only at the request of the receiver.
-
-So a receiver has to ask another object for it's state when it needs it. The source of facts sends the state back to caller at the time of request, not at the time of truth.
-
-Software is a process so any recorded data in the system is potentially suspect. It's a slice in time. Therefore we are trying to make a process by time slicing back in time often using past truths that may or may not be in sync, hoping that facts are correct.
-
-We end up writing paranoid software, locking around data inside of our object because you never know when another thread is going to come along and access this data. To me, this is insanity!
-
-Messaging in the component pattern is about communicating facts as they are true. To that end what is important are the following:
+What is wrong with messaging in common OOP is that objects communicate across their boundaries and only at the request of the receiver. A receiver has to ask another object for it's state when it needs it. The source of facts sends the state back to caller at the time of request, not at the time of truth. Software is a process so any recorded data in the system is potentially suspect. It's a slice in time. Therefore we are trying to make a process by time slicing back in time often using past truths that may or may not be in sync, hoping that facts are correct. We end up writing paranoid software, locking around data inside of our object because you never know when another thread is going to come along and access this data. To me, this is insanity! Messaging in the component pattern is about communicating facts as they are true. To that end what is important are the following:
 
 1. The existence of an output in context of some structure. (components) delivered as facts occur.
 2. The intention of the receiver to receive that output as facts occur.
@@ -46,9 +38,7 @@ Public methods and properties do not provide these, and is why components have o
 
 **_Isn't an output an observable?_**
 
-The observable pattern focuses on _values over time_ but I believe that the higher order idea is the idea of _a value at some point in time._ and in context.
-
- Information is useless without context. If I said "42" you have no idea what that means. But if I say the "thermometer output 42" it has meaning.
+Yes, sort of. The observable pattern focuses on _values over time_ but I believe that the higher order idea is the idea of _a value at some point in time._ and in context. Facts are useless without context. If I said "42" you have no idea what that means. But if I say the "thermometer output 42" it has meaning. Here we have structure, behavior, and state.
 
 This is the significance of a component output, it coerces proper system semantics with constraints.
 
