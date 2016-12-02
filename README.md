@@ -57,39 +57,45 @@ Operators
 =========
 Operators are simple components that compose together to make new ones, just like any component composition. They take a single input value, and may produce output, or, not. The not part is significant. It's not that operations do or don't output, it's that they may or may not depending on the context and purpose of the operator. For example a filter operator.
 
+
+![Composition](img/Component2.png)
+
+## What is a component?
+A component is any composable type that has input, a process, and output. A better way to think about a component is as a set of functions because a component can have a set of inputs and a set of output, but we can think of those sets as a single truth.. In the component pattern a pure function is a component as well, because it meets those requirements. I explain what I mean in the next section about operators.
+
+![Component](img/Component1.png)
+
+# Operators
+Operators are small simple components that compose together to make new ones, just like any component composition. They take a single input, and may produce output, or, not. The not part is significant. It's not that operations do or don't output, it's that it may or it may not, depending on it's context and purpose. For example a filter operator.
+
 **The idea behind operators are simple:**
 
 - a useful abstraction are "as much process with as little content as possible".
 - processing a value should not be coupled to it's delivery method. (such as observable operators)
 
 ```swift
-
 /// A type that operates on values possibly producing a different type,
 /// or no value at all.
-
-public protocol Operator  {
-    
+public protocol OperatorProtocol {
     associatedtype Input
     associatedtype Output
     
-    
     /// Operates and produces the next value with the specified input.
-    mutating func next(_ input: Input) -> Output?
+    mutating func input(_ input: Input) -> Output?
     
     /// Composes a target operator with `self` and returns a new operator.
-    func compose<Target: Operator>(_ : Target) -> Function<Input, Target.Output> where Target.Input == Output
+    func compose<Target:OperatorProtocol>(_ : Target) -> Operator<Input, Target.Output> where Target.Input == Output
 }
 ```
-
 
 ```swift
 var myOperator = Take<MyStruct>().map{ format($0.myProperty) }.action { label.text = $0 }
 ```
-We start with `Take` to declare we want to input `MyStruct`, we then perform a `map` and an `action`.  This defines a new `operator`. Now all we need to do is input values into the operator to produce a result. 
+We start with `Take` to declare we want to input `MyStruct`, we then perform a `map` and an `action`.  This defines a new `operator`. Now we a distinct operation, a small component we can input values into and produce a result. 
 
 ```swift
 
-myOperator.next(myStruct) 
+myOperator.input(myStruct) 
 
 ```
 
