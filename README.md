@@ -1,7 +1,7 @@
 # The Component Pattern
 
 The component pattern is an experiment and set of ideas to identify a recurring pattern found in well structured software.
-The pattern is generally a pattern of understanding. It can be implemented in varying degrees mostly by convention with existing types you already know. The ideas here are not unique, in-fact you will recognize the pattern the pattern as far back as the Unix OS, Lisp, and many other places.
+The pattern is generally a pattern of understanding. It can be implemented in varying degrees mostly by convention with existing types you already know. The ideas here are not unique, in-fact you will recognize the pattern as far back as the Unix OS, Lisp, and many other places.
  
  - [ ] TODO: compile a list of implementations.
 
@@ -15,7 +15,7 @@ Description:
 
 What is a component?
 --------------------
-Components are based on the idea that software has three axis, structure, behavior, and state. A component provides the structure, and is any composable type that has input, a process(behavior), and output. Another way to think about a component is as a pure function with as set of inputs and a set of outputs.
+Components are based on the idea that software has three axis, **structure**, **behavior**, and **state**. A component provides the structure, and is any composable type that has input, a process(behavior), and output. Another way to think about a component is as a pure function with as set of possible inputs and a set of possible outputs.
 
 ![Component](img/Component1.png)
 
@@ -34,7 +34,7 @@ Software is a process so any recorded data in the system is potentially suspect.
 
 We end up writing paranoid software, locking around data inside of our object because you never know when another thread is going to come along and access this data. To me, this is insanity!
 
-In OOP objects communicate on the basis of recorded facts. Messaging in the component pattern on the other hand is about communicating the facts as they are true. To that end what is important are the following:
+Messaging in the component pattern is about communicating facts as they are true. To that end what is important are the following:
 
 1. The existence of an output in context of some structure. (components) delivered as facts occur.
 2. The intention of the receiver to receive that output as facts occur.
@@ -44,29 +44,17 @@ Public methods and properties do not provide these, and is why components have o
 
 **_Isn't an output an observable?_**
 
-The observable pattern focuses on _values over time_ but I believe that the higher order idea is the idea of _a value at some point in time._ in context.
+The observable pattern focuses on _values over time_ but I believe that the higher order idea is the idea of _a value at some point in time._ and in context.
 
- Information is useless without context. If I said "42" you have no idea what that means. But if I say the "thermometer degrees output 42" it has meaning.
+ Information is useless without context. If I said "42" you have no idea what that means. But if I say the "thermometer output 42" it has meaning.
 
 This is the significance of a component output, it coerces proper system semantics with constraints.
 
 **Side note:**
  I believe a pattern smell is when a software system is made of parts that have obscure abstract names that are nothing about the solution. Names like presenters, interactors, or routers for example.
 
-Operators
-=========
-Operators are simple components that compose together to make new ones, just like any component composition. They take a single input value, and may produce output, or, not. The not part is significant. It's not that operations do or don't output, it's that they may or may not depending on the context and purpose of the operator. For example a filter operator.
-
-
-![Composition](img/Component2.png)
-
-## What is a component?
-A component is any composable type that has input, a process, and output. A better way to think about a component is as a set of functions because a component can have a set of inputs and a set of output, but we can think of those sets as a single truth.. In the component pattern a pure function is a component as well, because it meets those requirements. I explain what I mean in the next section about operators.
-
-![Component](img/Component1.png)
-
-# Operators
-Operators are small simple components that compose together to make new ones, just like any component composition. They take a single input, and may produce output, or, not. The not part is significant. It's not that operations do or don't output, it's that it may or it may not, depending on it's context and purpose. For example a filter operator.
+# Simple Components: Operators
+Operators are simple components that compose together to make new ones. They take a single input, and may produce output, or, not. The not part is important. It's not that operations do or don't output, they may or may not, depending on context and purpose. For example a filter operator.
 
 **The idea behind operators are simple:**
 
