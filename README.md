@@ -5,19 +5,21 @@ The pattern is generally a pattern of understanding. It can be implemented in va
  
  - [ ] TODO: compile a list of implementations.
 
-Description:
-------------
-- [ ] TODO
 
-
-
-![Composition](img/Component2.png)
 
 What is a component?
 --------------------
 Components are based on the idea that software has three axis, **structure**, **behavior**, and **state**. A component provides the structure, and is any composable type that has input, a process(behavior), and output. Another way to think about a component is as a pure function with as set of possible inputs and a set of possible outputs.
 
 ![Component](img/Component1.png)
+
+Composition:
+------------
+- [ ] TODO
+
+
+
+![Composition](img/Component2.png)
 
 The significance of an output.
 ------------------------------
