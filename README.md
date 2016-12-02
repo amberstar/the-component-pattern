@@ -1,22 +1,66 @@
 # The Component Pattern
 
-## What is the component pattern?
-The component pattern is a simple experiment to reason about the structure of software. It can be tried in varying degrees mostly by convention with exsiting types you already know. The ideas here are not unique, in fact you will recognize the ideas and see them everywhere, and as far back as the Unix OS, and the Lisp  programming language, and probably before way before that.
+The component pattern is an experiment and set of ideas to identify a recurring pattern found in well structured software.
+The pattern is generally a pattern of understanding. It can be implemented in varying degrees mostly by convention with existing types you already know. The ideas here are not unique, in-fact you will recognize the pattern the pattern as far back as the Unix OS, Lisp, and many other places.
+ 
+ - [ ] TODO: compile a list of implementations.
 
-The question is, is this a foundational concept that should be a pattern?
+Description:
+------------
+- [ ] TODO
+
+
 
 ![Composition](img/Component2.png)
 
-## What is a component?
-A component is any composable type that has input, a process, and output. Another way to think about a component is as a pure function with multiple inputs and outputs. In the component pattern a pure function is considered a component. Functions are just one type of component.
+What is a component?
+--------------------
+Components are based on the idea that software has three axis, structure, behavior, and state. A component provides the structure, and is any composable type that has input, a process(behavior), and output. Another way to think about a component is as a pure function with as set of inputs and a set of outputs.
 
 ![Component](img/Component1.png)
 
-# Operators
-Operators are simple components that compose together to make new ones, just like any component composition. They take a single input value in,and may produce output, or, not. The not part is signifigant. It's not that operations do or don't output, it's that it may or it may not, depending on it's context and purpouse. For example a filter operator.
+The significance of an output.
+------------------------------
+When asked about the meaning of Object Oriented Programming Alan Kay once said:
+
+>> *"OOP to me means only messaging, local retention and protection and
+ hiding of state-process, and extreme late-binding of all things"*
+
+What is wrong with messaging in common OOP is that objects communicate across their boundaries and only at the request of the receiver.
+
+So a receiver has to ask another object for it's state when it needs it. The source of facts sends the state back to caller at the time of request, not at the time of truth.
+
+Software is a process so any recorded data in the system is potentially suspect. It's a slice in time. Therefore we are trying to make a process by time slicing back in time often using past truths that may or may not be in sync, hoping that facts are correct.
+
+We end up writing paranoid software, locking around data inside of our object because you never know when another thread is going to come along and access this data. To me, this is insanity!
+
+In OOP objects communicate on the basis of recorded facts. Messaging in the component pattern on the other hand is about communicating the facts as they are true. To that end what is important are the following:
+
+1. The existence of an output in context of some structure. (components) delivered as facts occur.
+2. The intention of the receiver to receive that output as facts occur.
+
+Public methods and properties do not provide these, and is why components have outputs.
+
+
+**_Isn't an output an observable?_**
+
+The observable pattern focuses on _values over time_ but I believe that the higher order idea is the idea of _a value at some point in time._ in context.
+
+ Information is useless without context. If I said "42" you have no idea what that means. But if I say the "thermometer degrees output 42" it has meaning.
+
+This is the significance of a component output, it coerces proper system semantics with constraints.
+
+**Side note:**
+ I believe a pattern smell is when a software system is made of parts that have obscure abstract names that are nothing about the solution. Names like presenters, interactors, or routers for example.
+
+Operators
+=========
+Operators are simple components that compose together to make new ones, just like any component composition. They take a single input value, and may produce output, or, not. The not part is significant. It's not that operations do or don't output, it's that they may or may not depending on the context and purpose of the operator. For example a filter operator.
 
 **The idea behind operators are simple:**
-- a useful abstraction is "as much process with as little content as possible". 
+
+- a useful abstraction are "as much process with as little content as possible".
+- processing a value should not be coupled to it's delivery method. (such as observable operators)
 
 ```swift
 
@@ -49,8 +93,7 @@ myOperator.next(myStruct)
 
 ```
 
-## Sample Operators 
-(see `operator.swift` for more)
+**Example Operators**
 
 | `Operator`         | Description                                                                            |
 |--------------------|----------------------------------------------------------------------------------------|

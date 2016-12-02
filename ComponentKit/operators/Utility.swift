@@ -6,7 +6,7 @@
 import Foundation
 extension OperatorProtocol {
     
-    /// Print all elements upon ouput.
+    /// Print all elements upon output.
     public func print() -> Operator<Input, Output> {
         return action { Swift.print($0) }
     }

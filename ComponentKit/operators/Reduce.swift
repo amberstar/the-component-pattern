@@ -4,7 +4,7 @@
 //
 
 /// An stateful operator that produces output by `combining` each input with
-/// it's previous ouput.
+/// it's previous output.
 public struct Reduce<Element, Result> : OperatorProtocol {
     var accum : Result
     let combine : (Result, Element) -> Result

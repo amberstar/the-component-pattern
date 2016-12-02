@@ -8,8 +8,8 @@
 //// MARK: - Combine
 //===----------------------------------------------------------------------===//
 
-/// An operator that combined it's input with the output of an embeded operator
-/// producing a tuple of the initial input, and the output of the combinded operator.
+/// An operator that combined it's input with the output of an embedded operator
+/// producing a tuple of the initial input, and the output of the combined operator.
 public struct Combine<Element, T> : OperatorProtocol {
     //public typealias Output = (Element, T)
     public typealias Combinator = (Element) -> (Element, T)?
@@ -62,7 +62,7 @@ extension OperatorProtocol {
 
 extension OperatorProtocol {
     
-    /// branch to another operator then continue on with origional operator
+    /// branch to another operator then continue on with original operator
     public func branch<T>(_ target: Operator<Output, T>) -> Operator<Input, Output> {
         var targetv = target
         let branch =  Operator<Output, Output> {
@@ -87,19 +87,19 @@ public struct Evaluate<Element> : OperatorProtocol {
         return  (element, predicate(element))
     }
     
-    /// Creates an instance using the specified predicicate function.
+    /// Creates an instance using the specified predicate function.
     public init(predicate: @escaping (Element) -> Bool ) {
         self.predicate = predicate
     }
 }
 
 extension OperatorProtocol {
-    /// Produce output that satifies a predicate.
+    /// Produce output that satisfies a predicate.
     public func evaluate(_ predicate: @escaping (Output) -> Bool ) -> Operator<Input, Evaluation<Output>> {
         return compose(Evaluate(predicate: predicate))
     }
     
-    //    /// Produce output that satifies a predicate.
+    //    /// Produce output that satisfies a predicate.
     //    public func evaluate(predicate: @escaping (Value<Output>) -> Bool ) -> Function<Input, Evaluation<Output>> {
     //        return compose(Evaluate { predicate(Value($0))}
     //        )

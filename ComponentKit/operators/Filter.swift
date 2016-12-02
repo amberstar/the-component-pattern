@@ -4,7 +4,7 @@
 // Copyright © 2016 SIMPLETOUCH LLC. All rights reserved.
 //
 
-/// An operator that filters input and produces output that satifies a predicate.
+/// An operator that filters input and produces output that satisfies a predicate.
 public struct Filter<Element> : OperatorProtocol {
     var predicate : (Element) -> Bool
     
@@ -12,14 +12,14 @@ public struct Filter<Element> : OperatorProtocol {
         return  predicate(element) ? element : nil
     }
     
-    /// Creates an instance using the specified predicicate function.
+    /// Creates an instance using the specified predicate function.
     public init(_ isIncluded: @escaping (Element) -> Bool ) {
         self.predicate = isIncluded
     }
 }
 
 extension OperatorProtocol {
-    /// Produce output that satifies a predicate.
+    /// Produce output that satisfies a predicate.
     public func filter(_ isIncluded: @escaping (Output) -> Bool ) -> Operator<Input, Output> {
         return compose(Filter(isIncluded))
     }
