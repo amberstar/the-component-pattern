@@ -5,7 +5,7 @@ The component pattern is generally a pattern of understanding. It can be impleme
  
  - [ ] TODO: compile a list of implementations.
 
-- Chris Butcher from Bungie describes how this pattern is used in Halo. ![HandmadeCon 2016 - Asset Systems and Scalability](https://www.youtube.com/watch?v=7KXVox0-7lU)
+- Chris Butcher from Bungie describes how this pattern is used in Halo. [HandmadeCon 2016 - Asset Systems and Scalability](https://www.youtube.com/watch?v=7KXVox0-7lU)
 
 What is a component?
 --------------------
