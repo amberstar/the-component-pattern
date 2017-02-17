@@ -19,13 +19,17 @@ The Constraints:
 2. Only a parent (or sibling connected by a parent) can respond to output of a component
 3. Output from a child component may or may not cause output from a parent component
 
+![Composition](img/Component2.png)
+
+A triangle is formed from the focal point of reasoning (number 1) within the parent scope to the input into children (number 3) and output from children (number 4). This pattern recurses forming a hierarchy.
+
 Composition:
 ------------
-- [ ] TODO
-
-
-
-![Composition](img/Component2.png)
+1. The focal point of reasoning
+2. parent inputs
+3. input from parent to child component
+4. output from child component to parent
+5. parent ouputs
 
 The significance of an output.
 ------------------------------
