@@ -34,6 +34,8 @@ The Constraints:
 3. Only a parent (or sibling connected by a parent) can respond to output of a component
 4. Output from a child component may or may not cause output from a parent component
 
+Note: If objects are used, public methods (and public properties) can only be called by owning parents.
+
 The significance of an output.
 ------------------------------
 When asked about the meaning of Object Oriented Programming Alan Kay once said:
