@@ -21,7 +21,7 @@ A triangle is formed from the focal point of reasoning (number 1) within the par
 
 Decription:
 ------------
-1. The focal point of reasoning
+1. Parent component (The focal point of reasoning)
 2. parent inputs
 3. input from parent to child component
 4. output from child component to parent
