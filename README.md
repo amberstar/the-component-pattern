@@ -13,6 +13,12 @@ Components are based on the idea that software has three axis, **structure**, **
 
 ![Component](img/Component1.png)
 
+The Constraints:
+------------
+1. Only a parent component can send input to owned child components
+2. Only a parent (or sibling connected by a parent) can respond to output of a component
+3. Output from a child component may or may not cause output from a child component
+
 Composition:
 ------------
 - [ ] TODO
