@@ -15,12 +15,14 @@ Components are based on the idea that software has three axis, **structure**, **
 
 
 
+
+
+Decription:
+------------
 ![Composition](img/Component2.png)
 
 A triangle is formed from the focal point of reasoning (number 1) within the parent scope to the input into children (number 3) and output from children (number 4). This pattern recurses forming a hierarchy.
 
-Decription:
-------------
 1. parent component (The focal point of reasoning)
 2. parent inputs
 3. input sent from parent to child component
