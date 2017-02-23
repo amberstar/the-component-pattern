@@ -9,7 +9,7 @@ The component pattern is generally a pattern of understanding. It can be impleme
 
 What is a component?
 --------------------
-Components are based on the idea that software has three axis, **structure**, **behavior**, and **state** and each are interdependent to make a coherent well organized system. A component provides structure, and is defined as any composable type that has input, a process(behavior), and output. Another way to think about a component is a pure function with as set of possible inputs and a set of possible outputs.
+Components are based on the idea that software has three axis, **structure**, **behavior**, and **state** and each are interdependent to make a coherent well organized system. A component provides structure, and is defined as any composable type that has input, a process(behavior), and output. Another way to think about a component is a pure function with a set of possible inputs and a set of possible outputs.
 
 ![Component](img/Component1.png)
 
@@ -38,18 +38,18 @@ The Constraints:
 
 Note: If objects are used, public methods (and public properties) can only be called by owning parents.
 
-The significance of an output.
+Why public methods and properties are harmful to software structure, and the significance of an output.
 ------------------------------
 When asked about the meaning of Object Oriented Programming Alan Kay once said:
 
 >> *"OOP to me means only messaging, local retention and protection and
  hiding of state-process, and extreme late-binding of all things"*
 
-What is wrong with messaging in common OOP is that objects communicate across their boundaries and only at the request of the receiver. A receiver has to ask another object for it's state when it needs it. The source of facts sends the state back to caller at the time of request, not at the time of truth. Software is a process so any recorded data in the system is potentially suspect. It's a slice in time. Therefore we are trying to make a process by time slicing back in time often using past truths that may or may not be in sync, hoping that facts are correct. We end up writing paranoid software, locking around data inside of our object because you never know when another thread is going to come along and access this data. To me, this is insanity!
+What is wrong with messaging in common OOP is that objects communicate across their structural and temporal boundaries and at the request of the receiver. A receiver has to ask another object for it's state when it needs it. The source of facts sends the state back to caller at the time of request, not at the time of truth. Software is a process moving forward in time and any recorded data in the system is potentially out of date. 
 
-  Messaging in the component pattern is about communicating facts as they are true along what I call a "plane of truth". Asynchronicity happens on a perpendicular plane of truth. All messaging is co-ordinated from a focal point of reasoning. (#1 in the above)
+  Messaging in the component pattern occurs on a "plane of truth" in realtime. Asynchronicity happens on a perpendicular plane of truth. All messaging is coordinated from a focal point of reasoning (the parent scope)
 
-To that end what is important are the following:
+What is important::
 
 1. The existence of an output in context of some structure. (components) delivered as facts occur.
 2. The intention of the receiver to receive that output as facts occur.
