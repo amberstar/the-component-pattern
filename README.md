@@ -29,10 +29,10 @@ A triangle is formed from the focal point of reasoning (number 1) within the par
 4. output from child component recieved by parent 
 5. parent ouputs
 
+Composition:
+------------
  ![](img/Composition2.png)
- 
-## Composition
-Components are composed of sub-components as shown above. The Y axis represents composition. A component receives input, some process happens, and it produces output at some point in time. This is represented by the X axis. Each child components input is a mapping of it's parent's input. Each child components output is reduced into the parents process and may produce output. 
+Components are composed of sub-components as shown above. The Y axis represents composition or structure. A component receives input, some process happens, and it produces output at some point in time. This is represented by time int the X axis . Each child components input is a mapping of it's parent's input. Each child components output is a reduction into the parents state and may or may not cause output from the parent. 
  
   -  Input  = ParentInput -> ChildInput
  
