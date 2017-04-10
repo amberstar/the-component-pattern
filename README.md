@@ -56,7 +56,7 @@ When asked about the meaning of Object Oriented Programming Alan Kay once said:
 
 What is wrong with messaging in common OOP is that objects communicate across their structural and temporal boundaries and at the request of the receiver. A receiver has to ask another object for it's state when it needs it. The source of facts sends the state back to caller at the time of request, not at the time of truth. Software is a process moving forward in time and any recorded data in the system is potentially out of date. 
 
-  Messaging in the component pattern occurs on a "plane of truth" in realtime. Asynchronicity happens on a perpendicular plane of truth. All messaging is coordinated from a focal point of reasoning (the parent scope)
+  Messaging in the component pattern occurs on a "plane of truth" in realtime. Asynchronicity happens on a orthogonal plane of truth. All messaging is coordinated from a focal point of reasoning (the parent scope)
 
 What is important::
 
