@@ -9,7 +9,7 @@ The component pattern is generally a pattern of understanding. It can be impleme
 
 What is a component?
 --------------------
-Components are based on the idea that software has three axis, **structure**, **behavior**, and **state** and each are interdependent to make a coherent well organized system. Note that behvior is synonymous with process, and implies time. A component provides structure, and is defined as any composed structural element in this pattern that has input, a process(behavior), and output. Another way to think about a component is a pure function with a set of possible inputs and a set of possible outputs.
+Components are based on the idea that software has three axis, **structure**, **behavior**, and **state** and each are interdependent to make a coherent well organized system. Note that behavior is synonymous with process, and implies time. A component provides structure, and is defined as any composed structural element in this pattern that has input, a process(behavior), and output. Another way to think about a component is a pure function with a set of possible inputs and a set of possible outputs.
 
 ![Component](img/Component1.png)
 
