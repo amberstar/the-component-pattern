@@ -7,6 +7,9 @@ The component pattern is generally a pattern of understanding. It can be impleme
 
 - Chris Butcher from Bungie describes how this pattern is used in Halo. [HandmadeCon 2016 - Asset Systems and Scalability](https://www.youtube.com/watch?v=7KXVox0-7lU)
 
+![Component](img/ComponentPattern.jpg)
+Components define the structure of software and are are composed together as shown in the diagram above. Arrows pointing in represent input. Arrows pointing out represent output. Outer components are parent components of inner components. This keeps dependencies pointing inward and output outward. No inner component is dependent on an outer component until it is in the context of it's parent. Because the dependencies flow in the direction of composition of the system , the dependencies are inherent in the system itself.
+
 What is a component?
 --------------------
 Components are based on the idea that software has three axis, **structure**, **behavior**, and **state** and each are interdependent to make a coherent well organized system. Note that behavior is synonymous with process, and implies time. A component provides structure, and is defined as any composed structural element in this pattern that has input, a process(behavior), and output. Another way to think about a component is a pure function with a set of possible inputs and a set of possible outputs.
