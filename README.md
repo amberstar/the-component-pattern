@@ -125,4 +125,4 @@ myOperator.input(myStruct)
 | `.debugDescription` | Produces the inputs debug description                                                  |
 | `.prefix`           | Prefix the string input with a string                                                  |
 | `.date`             | Produce a tuple with the input and a date                                              |
-| `.defaultTo`             | Produce a default value if the no output is produced                              |
+| `.defaultTo`             | Produce a default value if no output is produced                              |
