@@ -42,7 +42,7 @@ The Constraints:
 
 Note: If objects are used, public methods (and public properties) can only be called by owning parents.
 
-Why public methods and properties are harmful to software structure, and the significance of an output.
+Why public methods(that return values) and properties are harmful to software structure, and the significance of an output.
 ------------------------------
 When asked about the meaning of Object Oriented Programming Alan Kay once said:
 
@@ -58,7 +58,7 @@ What is important::
 1. The existence of an output in context of some structure. (components) delivered as facts occur.
 2. The intention of the receiver to receive that output as facts occur.
 
-Public methods and properties do not provide these, and is why components have outputs.
+Public methods(that return values) and properties do not provide these, and is why components have outputs.
 
 
 **_Isn't an output an observable?_**
