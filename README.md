@@ -4,7 +4,7 @@ This project is a collection of ideas around structuring software.
 The component pattern is generally a pattern of understanding. It can be implemented or reasoned about in varying degrees mostly by convention using existing types you already know. The ideas here are not unique, in-fact you will see this pattern everywhere including  in Unix, Lisp, and many other surprising places.
  
 ![Component](img/ComponentPattern.jpg)
-Components define the structure of software and are are composed together as shown in the diagram above. Arrows pointing in represent input. Arrows pointing out represent output. Outer components are parent components of inner components. This keeps dependencies pointing inward and output outward. No inner component is dependent on an outer component until it is in the context of it's parent. Because the dependencies flow in the direction of composition of the system , the dependencies are inherent in the system itself.
+Components define the structure of software and are are composed together as shown in the diagram above. Arrows pointing in represent input. Arrows pointing out represent output. Outer components are parent components of inner components. This keeps dependencies pointing inward and output outward. No inner component is dependent on an outer component until it is in the context of its parent. Because the dependencies flow in the direction of composition of the system , the dependencies are inherent in the system itself.
 
 What is a component?
 --------------------
@@ -29,8 +29,8 @@ A triangle is formed from the focal point of reasoning (number 1) within the par
 1. parent component (The focal point of reasoning)
 2. parent inputs
 3. input sent from parent to child component
-4. output from child component recieved by parent 
-5. parent ouputs
+4. output from child component received by parent 
+5. parent outputs
 
 
 The Constraints:
@@ -49,7 +49,7 @@ When asked about the meaning of Object Oriented Programming Alan Kay once said:
 >> *"OOP to me means only messaging, local retention and protection and
  hiding of state-process, and extreme late-binding of all things"*
 
-What is wrong with messaging in common OOP is that objects communicate across their structural and temporal boundaries and at the request of the receiver. A receiver has to ask another object for it's state when it needs it. The source of facts sends the state back to caller at the time of request, not at the time of truth. Software is a process moving forward in time and any recorded data in the system is potentially out of date. 
+What is wrong with messaging in common OOP is that objects communicate across their structural and temporal boundaries and at the request of the receiver. A receiver has to ask another object for its state when it needs it. The source of facts sends the state back to caller at the time of request, not at the time of truth. Software is a process moving forward in time and any recorded data in the system is potentially out of date. 
 
   Messaging in the component pattern occurs on a "plane of truth" in realtime. Asynchronicity happens on a orthogonal plane of truth. All messaging is coordinated from a focal point of reasoning (the parent scope)
 
