@@ -16,7 +16,7 @@ Composition:
 ------------
  ![](img/Composition2.png)
  
-Components are composed of sub-components as shown above. The Y axis represents composition or structure. A component receives input, some process happens, and it produces output at some point in time. This is represented by time int the X axis . Each child components input is a mapping of it's parent's input. Each child components output is a reduction into the parents state and may or may not cause output from the parent. 
+Components are composed of sub-components as shown above. The Y axis represents composition or structure. A component receives input, some process happens, and it produces output at some point in time. This is represented by time int the X axis . Each child components input is a mapping of its parent's input. Each child components output is a reduction into the parents state and may or may not cause output from the parent. 
  
   -  Input  = ParentInput -> ChildInput
  
@@ -76,7 +76,7 @@ Operators are simple components that compose together to make new ones. They tak
 **The idea behind operators are simple:**
 
 - a useful abstraction is "as much process with as little content as possible".
-- processing a value should not be coupled to it's delivery method. (such as observable operators)
+- processing a value should not be coupled to its delivery method. (such as observable operators)
 
 ```swift
 /// A type that operates on values possibly producing a different type,
@@ -108,19 +108,19 @@ myOperator.input(myStruct)
 
 | `Operator`         | Description                                                                            |
 |--------------------|----------------------------------------------------------------------------------------|
-| `Take`          | Produces it's input                                                                    |
-| `Limit`         | Produces it's input a limited number of times                                          |
-| `Distinct`         | Produces distinct values relative to it's last output                                  |
+| `Take`          | Produces its input                                                                    |
+| `Limit`         | Produces its input a limited number of times                                          |
+| `Distinct`         | Produces distinct values relative to its last output                                  |
 | `Discard`          | Produces Void regardless of input                                                      |
-| `Action`           | Performs an action with  and produces it's input                            |
-| `Map`              | Produces the result of mapping a function over it's input                              |
+| `Action`           | Performs an action with  and produces its input                            |
+| `Map`              | Produces the result of mapping a function over its input                              |
 | `Filter`           | Produces output that satisfies a predicate                                             |
 | `Reduce`           | Produces the result of calling a `combine` function on each input and the last combine |
 | `Produce`           | Produces a result from a producer function |
-| `Count`            | Produces a count of it's input                                                         |
+| `Count`            | Produces a count of its input                                                         |
 | `Branch`           | Branch with the current output, then continue on the main branch                       |
-| `Combine`          | Combines it's input with the output of an operator producing a tuple      |
-| `.print`            | Prints and produces it's input                                                             |
+| `Combine`          | Combines its input with the output of an operator producing a tuple      |
+| `.print`            | Prints and produces its input                                                             |
 | `.description`      | Produces inputs description                                                            |
 | `.debugDescription` | Produces the inputs debug description                                                  |
 | `.prefix`           | Prefix the string input with a string                                                  |

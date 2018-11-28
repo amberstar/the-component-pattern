@@ -4,7 +4,7 @@
 //
 
 ///An operator that performs an action,
-/// and produces it's input.
+/// and produces its input.
 public struct Action<Input> : OperatorProtocol {
     var action : (Input) -> ()
     

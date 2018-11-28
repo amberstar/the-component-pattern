@@ -4,7 +4,7 @@
 // Copyright © 2016 SIMPLETOUCH LLC. All rights reserved.
 //
 
-/// An operator that produces the a count of it's input
+/// An operator that produces the a count of its input
 public struct Count<Element> : OperatorProtocol {
     var count : Int = 0
     

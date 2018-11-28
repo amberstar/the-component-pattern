@@ -38,7 +38,7 @@ extension OperatorProtocol {
 
 /// An operator type that uses a process function to generate output.
 ///
-/// This is distinct from Map in that it uses it's
+/// This is distinct from Map in that it uses its
 /// generator function to determine if it should produce
 /// output.
 public struct Operator<Input, Output> : OperatorProtocol {

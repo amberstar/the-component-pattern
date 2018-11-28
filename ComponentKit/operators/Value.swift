@@ -5,7 +5,7 @@
 //
 
 ///An operator that performs an action,
-/// and produces it's input.
+/// and produces its input.
 public struct Value<T> : OperatorProtocol {
     let value: T
     

@@ -4,7 +4,7 @@
 // Copyright © 2016 SIMPLETOUCH LLC. All rights reserved.
 //
 
-///An operator which always produces it's input
+///An operator which always produces its input
 public struct Take<Input> : OperatorProtocol {
     
     public func input(_ input: Input) -> Input? {

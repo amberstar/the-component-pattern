@@ -8,7 +8,7 @@
 //// MARK: - Combine
 //===----------------------------------------------------------------------===//
 
-/// An operator that combined it's input with the output of an embedded operator
+/// An operator that combined its input with the output of an embedded operator
 /// producing a tuple of the initial input, and the output of the combined operator.
 public struct Combine<Element, T> : OperatorProtocol {
     //public typealias Output = (Element, T)
